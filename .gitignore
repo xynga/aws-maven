@@ -1,4 +1,7 @@
-.idea/libraries
-.idea/tasks.xml
-.idea/workspace.xml
-target
+# IntelliJ
+.idea/
+
+*.iml
+
+# Project specific
+logs/

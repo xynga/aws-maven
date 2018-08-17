@@ -64,21 +64,21 @@ public final class SimpleStorageServiceWagonIntegrationTest {
             new SimpleStorageServiceWagon(this.amazonS3, BUCKET_NAME, BASE_DIRECTORY);
 
 
-    @Test
-    public void regionConnections() throws WagonException {
-        SimpleStorageServiceWagon remoteConnectingWagon = new SimpleStorageServiceWagon();
-
-        AuthenticationInfo authenticationInfo = new AuthenticationInfo();
-        authenticationInfo.setUserName(System.getProperty("access.key"));
-        authenticationInfo.setPassword(System.getProperty("secret.key"));
-
-        for (String bucket : getBuckets()) {
-            Repository repository = new Repository("test", String.format("s3://%s/", bucket));
-            remoteConnectingWagon.connectToRepository(repository, authenticationInfo, null);
-            assertNotNull(remoteConnectingWagon.getFileList(""));
-            remoteConnectingWagon.disconnectFromRepository();
-        }
-    }
+//    @Test
+//    public void regionConnections() throws WagonException {
+//        SimpleStorageServiceWagon remoteConnectingWagon = new SimpleStorageServiceWagon();
+//
+//        AuthenticationInfo authenticationInfo = new AuthenticationInfo();
+//        authenticationInfo.setUserName(System.getProperty("access.key"));
+//        authenticationInfo.setPassword(System.getProperty("secret.key"));
+//
+//        for (String bucket : getBuckets()) {
+//            Repository repository = new Repository("test", String.format("s3://%s/", bucket));
+//            remoteConnectingWagon.connectToRepository(repository, authenticationInfo, null);
+//            assertNotNull(remoteConnectingWagon.getFileList(""));
+//            remoteConnectingWagon.disconnectFromRepository();
+//        }
+//    }
 
     private List<String> getBuckets() {
         List<String> buckets = new ArrayList<String>();
